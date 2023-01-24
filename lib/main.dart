@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children:  [Text(
+                        children:  const [Text(
                             'SOE',style: TextStyle(
                             fontSize: 22,
                         fontStyle: FontStyle.normal,

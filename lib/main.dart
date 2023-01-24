@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children:  [Text(
+                        children:  const [Text(
                             'SOE',style: TextStyle(
                             fontSize: 22,
                         fontStyle: FontStyle.normal,
@@ -40,7 +40,6 @@ class _MyAppState extends State<MyApp> {
                           backgroundImage: AssetImage('assets/AvinashImg.jpg'),
                         ),
                         ],
-
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
@@ -189,39 +188,25 @@ class _MyAppState extends State<MyApp> {
                       )
                     ],
                   ),
-
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        cardMaker("Academic\n Calender",Icons.calendar_month_rounded),
-                        cardMaker("Timetable",Icons.lock_clock_outlined),
-                        cardMaker("Attendance",Icons.people_outline),
-                      ],
-                    ),
+                  Container(
+                    height: 500,
+                    child: GridView.count(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 10,
+                      padding: EdgeInsets.fromLTRB(0, 4, 0, 0),
+                      mainAxisSpacing: 10,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                    children: [
+                      cardMaker("Academic\n Calender",Icons.calendar_month_rounded),
+                      cardMaker("Timetable",Icons.lock_clock_outlined),
+                      cardMaker("Attendance",Icons.people_outline),
+                      cardMaker("LMS",Icons.book_sharp),
+                      cardMaker("   Internal\nAssessment",Icons.calendar_month_outlined),
+                      cardMaker("Feedback",Icons.calendar_month_outlined),
+                      cardMaker("Notification",Icons.notification_add_outlined),
+                    ],),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        cardMaker("LMS",Icons.book_sharp),
-                        cardMaker("   Internal\nAssessment",Icons.calendar_month_outlined),
-                        cardMaker("Feedback",Icons.calendar_month_outlined),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        cardMaker("Notification",Icons.notification_add_outlined),
-
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),
@@ -239,8 +224,8 @@ class _MyAppState extends State<MyApp> {
       shadowColor: Colors.black,
       elevation: 10,
       child: SizedBox(
-        width: 100,
-        height: 100,
+        width: 50,
+        height: 50,
         child: MaterialButton(
           onPressed: (){},
           child: Center(
